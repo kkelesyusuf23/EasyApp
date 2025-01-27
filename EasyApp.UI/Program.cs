@@ -1,5 +1,27 @@
-var builder = WebApplication.CreateBuilder(args);
+using EasyApp.UI.Context;
+using EasyApp.UI.Models.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
+// Connection String'i okuma
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// DbContext ve Identity ayarlarý
+builder.Services.AddDbContext<EasyContext>(options =>
+    options.UseSqlServer(connectionString));
+
+//// Identity ayarlarý
+builder.Services.AddIdentity<AppUser, AppRole>(options =>
+{
+    options.Password.RequireDigit = true; // Þifre politikalarý
+    options.Password.RequiredLength = 8;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+})
+.AddEntityFrameworkStores<EasyContext>() // Veritabaný baðlama
+.AddDefaultTokenProviders();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

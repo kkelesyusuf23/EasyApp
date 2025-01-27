@@ -1,0 +1,3 @@
+﻿-Kullanıclar olacak normal kullanıcılar ve admin kullanıcısı.
+-Her bir kullanıcı kendi panelinde kendine özgü bir NOT TUTMA ve YAPILACAKLAR listesi oluşturabilecek. Yapılacklar listesi hatırlatıcı görevi de görebilecek. İsteyen kullanıcı yapılacaklar listesinde herbir görev için tarih ve hatırlatıcı bilgisi girdiğinde belirttiği taraihte hatırlatma maili/mesajı gönderilecek
+-ABONELİK veya takip içeren gönderilerimizin olduğu bir BLOG sistem.
