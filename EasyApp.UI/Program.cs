@@ -10,7 +10,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // DbContext ve Identity ayarlarý
 builder.Services.AddDbContext<EasyContext>(options =>
     options.UseSqlServer(connectionString));
-
+//
 //// Identity ayarlarý
 builder.Services.AddIdentity<AppUser, AppRole>(options =>
 {
