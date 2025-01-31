@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Verify Email";
+}
+<div class="verify-box">
+    <h2>Verify Your Email</h2>
+    @if (ViewData.ModelState.ErrorCount > 0)
+    {
+        <div class="alert alert-danger">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+    <form asp-action="VerifyEmail" method="post">
+        <div class="form-group">
+            <label for="verificationCode">Verification Code</label>
+            <input type="text" name="verificationCode" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Verify</button>
+    </form>
+</div>

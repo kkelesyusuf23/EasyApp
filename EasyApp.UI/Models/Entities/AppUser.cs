@@ -6,6 +6,10 @@ namespace EasyApp.UI.Models.Entities
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+
+        public string? EmailVerificationCode { get; set; } 
+        public DateTime? VerificationCodeExpires { get; set; }
+
         public ICollection<BlogSubscription> Subscriptions { get; set; }
         public ICollection<BlogFollow> Follows { get; set; }
         public ICollection<BlogLike> Likes { get; set; }
